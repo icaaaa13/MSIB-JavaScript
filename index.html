@@ -3,92 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tugas 1 - JavaScript</title>
+    <title>Tugas 2 - Data Pegawai dan Gaji</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background-color: #ffffff;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        thead {
+            background-color: #3c97f1;
+            color: #ffffff;
+        }
+        tfoot {
+            background-color: #ecf0f1;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 
+    <marquee onmouseover="this.stop()" onmouseout="this.start()">
+        <h2>DATA PEGAWAI DAN RINCIAN GAJI</h2>
+    </marquee>
+    <hr/>
+
     <script>
-        document.write("<h2 align='center'>TUGAS 1 - JavaScript</h2><hr/>");
+        // 1. DATA PEGAWAI
+        let namaPegawai = "Dodi Prayodi";
+        let umur = 25;
+        let jabatan = "manajer";
+        let status = "menikah";
 
-        // =========================================================
-        // FUNGSI 1: MENGHITUNG LUAS PERSEGI PANJANG
-        // Penjelasan: Fungsi ini menerima parameter panjang dan lebar,
-        // lalu mengalikannya menggunakan operator aritmatika perkalian (*).
-        // =========================================================
-        function hitungLuasPersegiPanjang(panjang, lebar) {
-            var luas = panjang * lebar; // Mengalikan nilai panjang dengan lebar
-            return luas; // Mengembalikan hasil perhitungan
+        // 2. GAJI POKOK 
+        let gapok = 0;
+        let jbt = jabatan.toLowerCase();
+
+        if (jbt === "manajer") {
+            gapok = 15000000;
+        } else if (jbt === "asisten manajer") {
+            gapok = 10000000;
+        } else if (jbt === "staff") {
+            gapok = 5000000;
+        } else {
+            gapok = 0;
         }
 
-        // =========================================================
-        // FUNGSI 2: MENGHITUNG LUAS BUJUR SANGKAR (PERSEGI)
-        // Penjelasan: Fungsi ini menerima parameter sisi,
-        // lalu mengalikan sisi dengan sisi menggunakan operator (*).
-        // =========================================================
-        function hitungLuasBujurSangkar(sisi) {
-            var luas = sisi * sisi; // Mengalikan sisi dengan sisi
-            return luas; // Mengembalikan hasil perhitungan
-        }
+        // 3. TUNJANGAN JABATAN (15% dari Gaji Pokok) & BPJS (10% dari Gaji Pokok)
+        let tunjangJabatan = 0.15 * gapok;
+        let bpjs = 0.10 * gapok;
 
-        // =========================================================
-        // FUNGSI 3: MENGHITUNG LUAS SEGITIGA
-        // Penjelasan: Fungsi ini menerima parameter alas dan tinggi,
-        // lalu mengalikan 0.5 dengan alas dan tinggi (0.5 * a * t).
-        // =========================================================
-        function hitungLuasSegitiga(alas, tinggi) {
-            var luas = 0.5 * alas * tinggi; // Mengalikan 0.5 x alas x tinggi
-            return luas; // Mengembalikan hasil perhitungan
-        }
+        // 4. TUNJANGAN KELUARGA 
+        let tunjangKeluarga = (status.toLowerCase() === "menikah") ? (0.20 * gapok) : 0;
 
+        // 5. TOTAL GAJI
+        let totalGaji = gapok + tunjangJabatan + bpjs + tunjangKeluarga;
 
-        // =========================================================
-        // INISIALISASI & DEKLARASI VARIABEL 
-        // =========================================================
-        
-        // Variabel untuk Persegi Panjang
-        var panjang = 12;
-        var lebar = 6;
+        // Formatter Mata Uang Rupiah
+        let formatRp = (angka) => "Rp " + angka.toLocaleString("id-ID");
 
-        // Variabel untuk Bujur Sangkar
-        var sisi = 8;
+        // 6. MENCETAK TABEL HTML (thead, tbody, tfoot)
+        document.write("<table>");
 
-        // Variabel untuk Segitiga
-        var alas = 10;
-        var tinggi = 15;
+        // Judul Kolom (thead)
+        document.write("<thead>");
+        document.write("<tr>");
+        document.write("<th>Nama Pegawai</th>");
+        document.write("<th>Umur</th>");
+        document.write("<th>Jabatan</th>");
+        document.write("<th>Status</th>");
+        document.write("<th>Gaji Pokok</th>");
+        document.write("<th>Tunjangan Jabatan (15%)</th>");
+        document.write("<th>BPJS (10%)</th>");
+        document.write("<th>Tunjangan Keluarga (20%)</th>");
+        document.write("</tr>");
+        document.write("</thead>");
 
+        // Isi Data (tbody)
+        document.write("<tbody>");
+        document.write("<tr>");
+        document.write("<td>" + namaPegawai + "</td>");
+        document.write("<td>" + umur + " tahun</td>");
+        document.write("<td>" + jabatan + "</td>");
+        document.write("<td>" + status + "</td>");
+        document.write("<td>" + formatRp(gapok) + "</td>");
+        document.write("<td>" + formatRp(tunjangJabatan) + "</td>");
+        document.write("<td>" + formatRp(bpjs) + "</td>");
+        document.write("<td>" + formatRp(tunjangKeluarga) + "</td>");
+        document.write("</tr>");
+        document.write("</tbody>");
 
-        // =========================================================
-        // PEMANGGILAN FUNGSI & PEMROSESAN HASIL
-        // =========================================================
-        var luasPersegiPanjang = hitungLuasPersegiPanjang(panjang, lebar);
-        var luasBujurSangkar = hitungLuasBujurSangkar(sisi);
-        var luasSegitiga = hitungLuasSegitiga(alas, tinggi);
+        // Total Gaji (tfoot)
+        document.write("<tfoot>");
+        document.write("<tr>");
+        document.write("<td colspan='7' align='right'>TOTAL GAJI :</td>");
+        document.write("<td>" + formatRp(totalGaji) + "</td>");
+        document.write("</tr>");
+        document.write("</tfoot>");
 
-
-        // =========================================================
-        // MENAMPILKAN HASIL KE HALAMAN WEB & CONSOLE
-        // =========================================================
-
-        // Output pada halaman HTML menggunakan document.write()
-        document.write("<h3>1. Persegi Panjang</h3>");
-        document.write("Panjang: " + panjang + " cm<br/>");
-        document.write("Lebar: " + lebar + " cm<br/>");
-        document.write("<b>Luas Persegi Panjang = " + luasPersegiPanjang + " cm²</b><br/><br/>");
-
-        document.write("<h3>2. Bujur Sangkar (Persegi)</h3>");
-        document.write("Sisi: " + sisi + " cm<br/>");
-        document.write("<b>Luas Bujur Sangkar = " + luasBujurSangkar + " cm²</b><br/><br/>");
-
-        document.write("<h3>3. Segitiga</h3>");
-        document.write("Alas: " + alas + " cm<br/>");
-        document.write("Tinggi: " + tinggi + " cm<br/>");
-        document.write("<b>Luas Segitiga = " + luasSegitiga + " cm²</b><hr/>");
-
-        // Output pada Console Browser
-        console.log("=== HASIL PERHITUNGAN LUAS ===");
-        console.log("Luas Persegi Panjang: " + luasPersegiPanjang);
-        console.log("Luas Bujur Sangkar: " + luasBujurSangkar);
-        console.log("Luas Segitiga: " + luasSegitiga);
+        document.write("</table>");
     </script>
 
 </body>
