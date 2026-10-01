@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 1 - JavaScript</title>
+</head>
+<body>
+
+    <script>
+        document.write("<h2 align='center'>TUGAS 1 - JavaScript</h2><hr/>");
+
+        // =========================================================
+        // FUNGSI 1: MENGHITUNG LUAS PERSEGI PANJANG
+        // Penjelasan: Fungsi ini menerima parameter panjang dan lebar,
+        // lalu mengalikannya menggunakan operator aritmatika perkalian (*).
+        // =========================================================
+        function hitungLuasPersegiPanjang(panjang, lebar) {
+            var luas = panjang * lebar; // Mengalikan nilai panjang dengan lebar
+            return luas; // Mengembalikan hasil perhitungan
+        }
+
+        // =========================================================
+        // FUNGSI 2: MENGHITUNG LUAS BUJUR SANGKAR (PERSEGI)
+        // Penjelasan: Fungsi ini menerima parameter sisi,
+        // lalu mengalikan sisi dengan sisi menggunakan operator (*).
+        // =========================================================
+        function hitungLuasBujurSangkar(sisi) {
+            var luas = sisi * sisi; // Mengalikan sisi dengan sisi
+            return luas; // Mengembalikan hasil perhitungan
+        }
+
+        // =========================================================
+        // FUNGSI 3: MENGHITUNG LUAS SEGITIGA
+        // Penjelasan: Fungsi ini menerima parameter alas dan tinggi,
+        // lalu mengalikan 0.5 dengan alas dan tinggi (0.5 * a * t).
+        // =========================================================
+        function hitungLuasSegitiga(alas, tinggi) {
+            var luas = 0.5 * alas * tinggi; // Mengalikan 0.5 x alas x tinggi
+            return luas; // Mengembalikan hasil perhitungan
+        }
+
+
+        // =========================================================
+        // INISIALISASI & DEKLARASI VARIABEL 
+        // =========================================================
+        
+        // Variabel untuk Persegi Panjang
+        var panjang = 12;
+        var lebar = 6;
+
+        // Variabel untuk Bujur Sangkar
+        var sisi = 8;
+
+        // Variabel untuk Segitiga
+        var alas = 10;
+        var tinggi = 15;
+
+
+        // =========================================================
+        // PEMANGGILAN FUNGSI & PEMROSESAN HASIL
+        // =========================================================
+        var luasPersegiPanjang = hitungLuasPersegiPanjang(panjang, lebar);
+        var luasBujurSangkar = hitungLuasBujurSangkar(sisi);
+        var luasSegitiga = hitungLuasSegitiga(alas, tinggi);
+
+
+        // =========================================================
+        // MENAMPILKAN HASIL KE HALAMAN WEB & CONSOLE
+        // =========================================================
+
+        // Output pada halaman HTML menggunakan document.write()
+        document.write("<h3>1. Persegi Panjang</h3>");
+        document.write("Panjang: " + panjang + " cm<br/>");
+        document.write("Lebar: " + lebar + " cm<br/>");
+        document.write("<b>Luas Persegi Panjang = " + luasPersegiPanjang + " cm²</b><br/><br/>");
+
+        document.write("<h3>2. Bujur Sangkar (Persegi)</h3>");
+        document.write("Sisi: " + sisi + " cm<br/>");
+        document.write("<b>Luas Bujur Sangkar = " + luasBujurSangkar + " cm²</b><br/><br/>");
+
+        document.write("<h3>3. Segitiga</h3>");
+        document.write("Alas: " + alas + " cm<br/>");
+        document.write("Tinggi: " + tinggi + " cm<br/>");
+        document.write("<b>Luas Segitiga = " + luasSegitiga + " cm²</b><hr/>");
+
+        // Output pada Console Browser
+        console.log("=== HASIL PERHITUNGAN LUAS ===");
+        console.log("Luas Persegi Panjang: " + luasPersegiPanjang);
+        console.log("Luas Bujur Sangkar: " + luasBujurSangkar);
+        console.log("Luas Segitiga: " + luasSegitiga);
+    </script>
+
+</body>
+</html>
