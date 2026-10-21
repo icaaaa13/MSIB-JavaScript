@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Tugas 4 CSS - Layout Frameset</title>
+</head>
+
+<frameset rows="15%, 11%, *, 6%" frameborder="1" border="1">
+    <frame src="header.html" name="header" scrolling="no" noresize>
+    <frame src="nav.html" name="navigation" scrolling="no" noresize>
+    
+    <frameset cols="18%, *, 18%">
+        <frame src="left.html" name="left_content">
+        <frame src="home.html" name="main_content">
+        <frame src="right.html" name="right_content">
+    </frameset>
+
+    <frame src="footer.html" name="footer" scrolling="no" noresize>
+</frameset>
+</html>
