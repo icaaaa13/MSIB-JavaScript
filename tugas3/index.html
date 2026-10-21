@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tugas 3 HTML - Frameset</title>
+</head>
+<!-- Membagi halaman menjadi 4 baris -->
+<frameset rows="15%, 8%, *, 10%" frameborder="1">
+    <!-- Baris 1: Header -->
+    <frame src="header.html" name="header" noresize>
+    
+    <!-- Baris 2: Navigation Menu -->
+    <frame src="nav.html" name="navigation" noresize>
+    
+    <!-- Baris 3: Area Tengah (Membagi menjadi 3 kolom) -->
+    <frameset cols="20%, 60%, 20%">
+        <frame src="left.html" name="left_content">
+        <!-- Target link internal diarahkan ke frame 'main_content' -->
+        <frame src="home.html" name="main_content">
+        <frame src="right.html" name="right_content">
+    </frameset>
+    
+    <!-- Baris 4: Footer -->
+    <frame src="footer.html" name="footer" noresize>
+</frameset>
+</html>
