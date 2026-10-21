@@ -1,0 +1,81 @@
+/* Layout TUGAS 5 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.grid-container {
+    width: 100%;
+    max-width: 650px;
+    background-color: #ffffff;
+    border: 2px solid #333333;
+    padding: 12px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto auto 200px auto auto; 
+    gap: 10px;
+}
+
+/* Properti Dasar Seluruh Elemen */
+.header, .nav, .content-left, .main-content, .content-right, .extra-section, .footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 6px;
+    color: #ffffff;
+}
+
+.header {
+    grid-column: 1 / -1;
+    background-color: #2c3e50;
+    padding: 18px;
+    font-size: 20px;
+}
+
+.nav {
+    grid-column: 1 / -1;
+    background-color: #16a085;
+    padding: 14px;
+    font-size: 18px;
+}
+
+.content-left {
+    background-color: #2980b9;
+    font-size: 16px;
+}
+
+.main-content {
+    background-color: #e14ab4;
+    font-size: 18px;
+}
+
+.content-right {
+    background-color: #2980b9;
+    font-size: 16px;
+}
+
+
+.extra-section {
+    grid-column: 1 / -1; 
+    background-color: #16a085; 
+    padding: 15px;
+    font-size: 18px;
+}
+
+.footer {
+    grid-column: 1 / -1;
+    background-color: #34495e;
+    padding: 15px;
+    font-size: 18px;
+}
