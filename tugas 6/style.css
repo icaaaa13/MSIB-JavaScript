@@ -1,0 +1,90 @@
+/* Reset Margin & Padding Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Container pembungkus utama */
+.container {
+    width: 100%;
+    max-width: 900px;
+    background-color: #ffffff;
+    border: 2px solid #333;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Header */
+.header {
+    background-color: #4a90e2;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Navigation Menu */
+.nav {
+    background-color: #50e3c2;
+    color: #333;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* Main Section */
+.main {
+    background-color: #f5a623;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.main > h2 {
+    margin-bottom: 15px;
+}
+
+/* Container untuk 3 Content */
+.content-container {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+/* Setiap Box Content */
+.content-box {
+    flex: 1;
+    background-color: #bd10e0;
+    color: white;
+    text-align: center;
+    padding: 40px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Footer */
+.footer {
+    background-color: #4a4a4a;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* Responsive Desain untuk Layar Kecil (HP) */
+@media (max-width: 600px) {
+    .content-container {
+        flex-direction: column;
+    }
+}
